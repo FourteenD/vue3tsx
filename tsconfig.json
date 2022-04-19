@@ -3,6 +3,7 @@
     "baseUrl": "./",
     "target": "esnext",
     "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,

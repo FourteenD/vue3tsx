@@ -5,12 +5,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Home"),
   },
   {
-    path: "/about",
-    component: () => import("@/views/About"),
-  },
-  {
     path: "/login",
     component: () => import("@/views/Login"),
+  },
+  {
+    path: "/about",
+    component: () => import("@/views/About"),
   },
 ];
 

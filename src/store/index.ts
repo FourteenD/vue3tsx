@@ -5,11 +5,7 @@ interface storeModulesType {
 }
 
 const files = import.meta.globEager("./*.ts");
-let modules: storeModulesType = {};
+export let modules: storeModulesType = {};
 Object.keys(files).map((key) => {
   modules[key.slice(2, -3)] = files[key].default;
 });
-
-export default {
-  ...modules,
-};

@@ -1,11 +1,15 @@
+import { defineStore } from "pinia";
 import useUserStore from "./useUserStore";
-
-const modulesFiles = import.meta.globEager("./*.ts");
-let modules = [] as any;
-for (const path in modulesFiles) {
-  modules = [].concat(modules, modulesFiles[path].default);
+interface storeModulesType {
+  [key: string]: ReturnType<typeof defineStore>;
 }
 
-console.log(modules);
+const files = import.meta.globEager("./*.ts");
+let modules: storeModulesType = {};
+Object.keys(files).map((key) => {
+  modules[key.slice(2, -3)] = files[key].default;
+});
 
-export { useUserStore };
+export default {
+  ...modules,
+};

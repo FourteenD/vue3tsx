@@ -1,17 +1,17 @@
 import { defineComponent } from "vue";
-import { useUserStore } from "@/store";
+import useStore from "@/store";
 
 export default defineComponent({
   name: "Home",
   setup() {
-    const mainStore = useUserStore();
+    const userStore = useStore.user();
 
     return () => (
       <div>
         <h1>Home</h1>
         <p>This is the home page</p>
-        <button onClick={mainStore.increment}>
-          原数{mainStore.count} ; 乘数{mainStore.countMultiplier}
+        <button onClick={userStore.increment}>
+          原数{userStore.count} ; 乘数{userStore.countMultiplier}
         </button>
       </div>
     );

@@ -1,12 +1,12 @@
 type arrayFormat = "indices" | "brackets" | "repeat" | "comma";
 
-function queryParams(
+const queryParams = (
   data: {
     [key: string]: any;
   } = {},
   isPrefix = true,
   arrayFormat: arrayFormat = "brackets"
-) {
+) => {
   const prefix = isPrefix ? "?" : "";
   const _result = [];
   if (["indices", "brackets", "repeat", "comma"].indexOf(arrayFormat) == -1)
@@ -57,7 +57,7 @@ function queryParams(
     }
   }
   return _result.length ? prefix + _result.join("&") : "";
-}
+};
 
 export default {
   queryParams,

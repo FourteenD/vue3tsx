@@ -1,5 +1,5 @@
 import utils from "./";
-type method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "OPTIONS";
+type Method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "OPTIONS";
 export default class Fetch {
   url: string;
   init: RequestInit;
@@ -7,7 +7,7 @@ export default class Fetch {
     this.url = url;
     this.init = init;
   }
-  request(path: string, method: method, body?: BodyInit): Promise<Response> {
+  request(path: string, method: Method, body?: BodyInit): Promise<Response> {
     const url = `${this.url}${path}`;
     const init = {
       ...this.init,

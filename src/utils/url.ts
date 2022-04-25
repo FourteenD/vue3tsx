@@ -1,9 +1,7 @@
 type arrayFormat = "indices" | "brackets" | "repeat" | "comma";
 
 const queryParams = (
-  data: {
-    [key: string]: any;
-  } = {},
+  data: { [key: string]: any } = {},
   isPrefix = true,
   arrayFormat: arrayFormat = "brackets"
 ) => {

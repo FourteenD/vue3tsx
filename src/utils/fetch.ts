@@ -1,6 +1,6 @@
 import utils from "./";
 type Method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "OPTIONS";
-export default class Fetch {
+export class Fetch {
   url: string;
   init: RequestInit;
   constructor(url: string, init: RequestInit) {
@@ -50,3 +50,5 @@ export default class Fetch {
     return this.request(path, "OPTIONS", body);
   }
 }
+
+export default Fetch;

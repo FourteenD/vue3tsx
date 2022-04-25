@@ -1,6 +1,6 @@
 type ArrayFormat = "indices" | "brackets" | "repeat" | "comma";
 
-const queryParams = (
+export const queryParams = (
   data: { [key: string]: any } = {},
   isPrefix = true,
   arrayFormat: ArrayFormat = "brackets"

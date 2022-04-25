@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-export default defineStore("user", {
+export const user = defineStore("user", {
   state: () => {
     return {
       count: 0,
@@ -17,3 +17,5 @@ export default defineStore("user", {
     },
   },
 });
+
+export default user;

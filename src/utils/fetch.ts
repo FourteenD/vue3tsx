@@ -1,3 +1,4 @@
+import utils from "./";
 type method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "OPTIONS";
 export default class Fetch {
   url: string;
@@ -18,14 +19,10 @@ export default class Fetch {
   get(
     path: string,
     query: {
-      [key: string]: string | number;
+      [key: string]: any;
     }
   ): Promise<Response> {
-    const esc = encodeURIComponent;
-    let queryParams = Object.keys(query)
-      .map((key) => `${esc(key)}=${esc(query[key])}`)
-      .join("&");
-    if (queryParams) path += `?${queryParams}`;
+    if (query) path += utils.url.queryParams(query);
     return this.request(path, "GET");
   }
   post(path: string, body: BodyInit): Promise<Response> {
@@ -37,14 +34,10 @@ export default class Fetch {
   delete(
     path: string,
     query: {
-      [key: string]: string | number;
+      [key: string]: any;
     }
   ): Promise<Response> {
-    const esc = encodeURIComponent;
-    let queryParams = Object.keys(query)
-      .map((key) => `${esc(key)}=${esc(query[key])}`)
-      .join("&");
-    if (queryParams) path += `?${queryParams}`;
+    if (query) path += utils.url.queryParams(query);
     return this.request(path, "DELETE");
   }
   patch(path: string, body: BodyInit): Promise<Response> {

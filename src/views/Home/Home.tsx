@@ -13,6 +13,7 @@ export default defineComponent({
         <button onClick={userStore.increment}>
           原数{userStore.count} ; 乘数{userStore.countMultiplier}
         </button>
+        <button onClick={() => {}}>登录</button>
       </div>
     );
   },

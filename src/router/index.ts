@@ -3,12 +3,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
-    component: () => import("@/views/Home"),
+    component: () => import("@/views/Home/Home"),
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/Login"),
+    component: () => import("@/views/Login/Login"),
   },
   {
     path: "/:pathMatch(.*)*",

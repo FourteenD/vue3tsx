@@ -3,9 +3,5 @@
     "Pinia",
     "styl"
   ],
-  "docwriter.style": "Auto-detect",
-  "docwriter.progress.trackClasses": true,
-  "docwriter.progress.trackFunctions": true,
-  "docwriter.progress.trackMethods": true,
-  "docwriter.progress.trackTypes": true
+  "docwriter.language": "Chinese",
 }

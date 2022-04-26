@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import("@/views/Error/404"),
+    component: () => import("@/views/Error/Error404"),
   },
 ];
 

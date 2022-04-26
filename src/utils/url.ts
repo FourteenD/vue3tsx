@@ -1,18 +1,17 @@
 type ArrayFormat = "indices" | "brackets" | "repeat" | "comma";
 
 /**
- * It takes an object, and returns a query string
- * @param data - The data to be converted to the query string.
- * @param [isPrefix=true] - Whether to add a question mark to the front of the string
- * @param {ArrayFormat} [arrayFormat=brackets] - The format of the array, which can be one of the
- * following: "indices" | "brackets" | "repeat" | "comma"
- * @returns A function that takes in an object and returns a string.
+ * 它将对象转换为查询字符串
+ * @param data - 要转换为查询字符串的数据。
+ * @param [isPrefix=true] - 是否在字符串前面添加问号。
+ * @param {ArrayFormat} [arrayFormat=brackets] - 数组的格式，可以是以下之一："indices" | "brackets" | "repeat" | "comma"
+ * @returns {string}  返回一个查询字符串。
  */
 export const queryParams = (
   data: { [key: string]: any } = {},
   isPrefix = true,
   arrayFormat: ArrayFormat = "brackets"
-) => {
+): string => {
   const prefix = isPrefix ? "?" : "";
   const _result = [];
   if (["indices", "brackets", "repeat", "comma"].indexOf(arrayFormat) == -1)

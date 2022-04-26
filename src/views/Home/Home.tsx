@@ -5,7 +5,6 @@ export default defineComponent({
   name: "Home",
   setup() {
     const userStore = useStore.user();
-
     return () => (
       <div>
         <h1>Home</h1>

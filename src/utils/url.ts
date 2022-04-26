@@ -1,5 +1,13 @@
 type ArrayFormat = "indices" | "brackets" | "repeat" | "comma";
 
+/**
+ * It takes an object, and returns a query string
+ * @param data - The data to be converted to the query string.
+ * @param [isPrefix=true] - Whether to add a question mark to the front of the string
+ * @param {ArrayFormat} [arrayFormat=brackets] - The format of the array, which can be one of the
+ * following: "indices" | "brackets" | "repeat" | "comma"
+ * @returns A function that takes in an object and returns a string.
+ */
 export const queryParams = (
   data: { [key: string]: any } = {},
   isPrefix = true,
